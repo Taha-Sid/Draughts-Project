@@ -4,7 +4,7 @@ BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
-BROWN = (100,40,0)
+BROWN = (170,50,10)
  
 pygame.init()
  
@@ -33,7 +33,7 @@ board = [[1,0,1,0,1,0,1,0],
 class BlackBox(pygame.sprite.Sprite):
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((20,20))
+        self.image = pygame.Surface((75,75))
         self.image.fill(BLACK)
         self.rect = self.image.get_rect()
         self.rect.y = y
@@ -42,7 +42,7 @@ class BlackBox(pygame.sprite.Sprite):
 class BrownBox(pygame.sprite.Sprite):
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((20,20))
+        self.image = pygame.Surface((75,75))
         self.image.fill(BROWN)
         self.rect = self.image.get_rect()
         self.rect.y = y
@@ -57,7 +57,7 @@ all_sprites_list = pygame.sprite.Group()
 for y in range(8):
     for x in range(8):
         if board[y][x] == 1:
-            brownbox = BrownBox(box_x*15,box_y*15)
+            brownbox = BrownBox(x*75,y*75)
             all_sprites_list.add(brownbox)
             brownbox_list.add(brownbox)
         else:
