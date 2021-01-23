@@ -33,8 +33,10 @@ board = [[1,0,1,0,1,0,1,0],
 class BlackBox(pygame.sprite.Sprite):
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((75,75))
-        self.image.fill(BLACK)
+        self.image = pygame.image.load('yellow_circle.png')
+        self.rect = self.image.get_rect()
+        #self.image = pygame.Surface((75,75))
+        #self.image.fill(BLACK)
         self.rect = self.image.get_rect()
         self.rect.y = y
         self.rect.x = x
@@ -42,8 +44,10 @@ class BlackBox(pygame.sprite.Sprite):
 class BrownBox(pygame.sprite.Sprite):
     def __init__(self,x,y):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((75,75))
-        self.image.fill(BROWN)
+        self.image = pygame.image.load('blue_circle.png')
+        self.rect = self.image.get_rect()
+        #self.image = pygame.Surface((75,75))
+        #self.image.fill(BROWN)
         self.rect = self.image.get_rect()
         self.rect.y = y
         self.rect.x = x
